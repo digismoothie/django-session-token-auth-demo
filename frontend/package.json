@@ -1,0 +1,29 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "snowpack build && tailwindcss-cli build ./tailwind.css -o ../static/tailwind.css",
+    "start": "snowpack dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hotwired/turbo": "^7.0.0-beta.4",
+    "@shopify/app-bridge": "^1.29.0",
+    "@shopify/app-bridge-utils": "^1.29.0",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.3",
+    "postcss": "^8.2.4",
+    "stimulus": "^2.0.0",
+    "stimulus-autocomplete": "^1.4.2",
+    "tailwindcss": "^2.0.2",
+    "tailwindcss-cli": "^0.1.2"
+  },
+  "devDependencies": {
+    "snowpack": "^3.0.11"
+  }
+}
