@@ -15,3 +15,19 @@ repos:
     hooks:
       - id: isort
         args: ['--profile', 'black']
+
+  - repo: https://github.com/prettier/pre-commit
+    rev: v2.1.2
+    hooks:
+      - id: prettier
+        entry: prettier --write --single-quote --trailing-comma=all
+        files: "\\.(\
+          css|less|scss\
+          |graphql|gql\
+          |js|jsx\
+          |json\
+          |md|markdown|mdown|mkdn\
+          |mdx\
+          |ts|tsx\
+          |yaml|yml\
+          )$"
