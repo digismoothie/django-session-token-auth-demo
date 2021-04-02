@@ -54,7 +54,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "shopify_auth.cookieless_auth.middleware.CookielessAuthMiddleware",
+    "shopify_auth.cookieless_auth.middleware.CookielessAuthMiddleware", # This middleware has to be before django.contrib.auth.middleware.AuthenticationMiddleware.
     "django.contrib.messages.middleware.MessageMiddleware",
     # "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
