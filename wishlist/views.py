@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 from pyactiveresource.connection import UnauthorizedAccess
-from shopify_auth.cookieless_auth.views import get_scope_permission
+from shopify_auth.session_tokens.views import get_scope_permission
 
 
 class SplashPageView(generic.View):

@@ -20,7 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path("", include("wishlist.urls", namespace="wishlist")),
-    path("auth/", include("shopify_auth.cookieless_auth.urls", namespace="cookieless_auth")),
+    path("auth/", include("shopify_auth.session_tokens.urls", namespace="session_tokens")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("admin/", admin.site.urls),
 ]
