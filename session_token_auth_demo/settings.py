@@ -24,7 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DJANGO_HASHIDS_SALT = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("ENV", "development") != "production"
@@ -54,7 +53,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "shopify_auth.session_tokens.middleware.SessionTokensAuthMiddleware", # This middleware has to be before django.contrib.auth.middleware.AuthenticationMiddleware.
+    "shopify_auth.session_tokens.middleware.SessionTokensAuthMiddleware", # This middleware has to be after django.contrib.auth.middleware.AuthenticationMiddleware.
     "django.contrib.messages.middleware.MessageMiddleware",
     # "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
@@ -144,14 +143,6 @@ LOGIN_REDIRECT_URL = "/"
 # This ensures that correct 'https' URLs are generated when our Django app is running behind a proxy like nginx, or is
 # being tunneled (by ngrok, for example).
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-
-
-DEFAULT_FROM_EMAIL = "Josef Rousek <josef@rousek.name>"
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
-EMAIL_PORT = "587"
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
