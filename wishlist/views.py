@@ -57,14 +57,6 @@ class SplashPageView(CreateChargeMixin, generic.View):
         )
 
 
-# class ShopifyLoginRequiredMixin(LoginRequiredMixin):
-#     def get_login_url(self):
-#         shop = self.request.GET.get("shop")
-#         if shop:
-#             return settings.LOGIN_URL + f"?shop={shop}"
-#         return settings.LOGIN_URL
-
-
 class HomeView(LoginRequiredMixin, generic.TemplateView):
     template_name = "wishlist/index.html"
 
