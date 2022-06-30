@@ -71,6 +71,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'shopify_auth.session_tokens.context_processors.shopify_auth',
             ],
         },
     },
@@ -125,11 +126,11 @@ SHOPIFY_APP_API_SCOPE = [
     "read_fulfillments",
     "write_fulfillments",
 ]
-SHOPIFY_APP_API_VERSION = "2021-01"
+SHOPIFY_APP_API_VERSION = "unstable"
 SHOPIFY_APP_IS_EMBEDDED = True
 SHOPIFY_APP_DEV_MODE = False
 SHOPIFY_APP_TEST_CHARGE = os.environ.get("SHOPIFY_APP_TEST_CHARGE", "False") == "True"
-
+BILLING_REDIRECT_URL = "wishlist:dashboard"
 
 # Use the Shopify Auth user model.
 AUTH_USER_MODEL = "wishlist.AuthAppShopUser"

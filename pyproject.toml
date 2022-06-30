@@ -5,14 +5,14 @@ description = ""
 authors = ["Josef Rousek <josef.rousek@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "3.8.6"
+python = "3.10.3"
 Django = "^3.1.5"
 whitenoise = "^5.2.0"
 waitress = "^1.4.4"
 dj-database-url = "^0.5.0"
 psycopg2-binary = "^2.8.6"
 python-dotenv = {extras = ["cli"], version = "^0.15.0"}
-django-shopify-auth = { git = "https://github.com/discolabs/django-shopify-auth.git", branch = "feature/cookieless-auth" }
+django-shopify-auth = "^1.2.3"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^2.9.3"

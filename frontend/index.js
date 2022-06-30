@@ -25,13 +25,8 @@ function redirectThroughTurbolinks(isInitialRedirect = false) {
   var validLoadPath = data && data.loadPath;
   var shouldRedirect = false;
 
-  switch (isInitialRedirect) {
-    case true:
-      shouldRedirect = validLoadPath;
-      break;
-    case false:
-      // shouldRedirect = validLoadPath && data.loadPath !== "/home";
-      break;
+  if (isInitialRedirect) {
+    shouldRedirect = validLoadPath;
   }
   if (shouldRedirect) Turbo.visit(data.loadPath);
 }
